@@ -1,5 +1,6 @@
 import 'package:shortid/src/alphabet.dart' as alphabet;
 import 'package:shortid/src/build.dart';
+import 'package:shortid/src/is_valid.dart';
 
 // for future
 int _clusterWorkerId = 0;
@@ -37,6 +38,8 @@ class _Shortid {
   /// Generate unique id
   /// Returns string id
   String generate() => build(_clusterWorkerId);
+
+  bool isValid(String shortId) => isShortId(shortId);
 }
 
 _Shortid shortid = new _Shortid();
